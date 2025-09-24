@@ -26,10 +26,14 @@ public class Order {
     @Column(name = "order_date", nullable = false)
     private ZonedDateTime orderDate;
 
-    public Order(String orderNumber, Long userId, ZonedDateTime orderDate) {
+    @Column(name = "address_id", nullable = false)
+    private Long addressId;
+
+    public Order(String orderNumber, Long userId, ZonedDateTime orderDate, Long addressId) {
         this.orderNumber = orderNumber;
         this.userId = userId;
         this.orderDate = orderDate;
+        this.addressId = addressId;
     }
 
 }
